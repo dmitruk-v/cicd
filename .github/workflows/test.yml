@@ -1,0 +1,13 @@
+name: "My first action"
+
+on:
+  push:
+    branches: ["master"]
+
+jobs:
+  build-app:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: go test -v
+      - run: go build -v -o ./bin/app
